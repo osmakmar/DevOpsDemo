@@ -2,3 +2,5 @@
 .recommenders
 RemoteSystemsTempFiles
 .gradle
+# Ignore Gradle build output directory
+build
