@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 @RestController
 public class ModuleController {
+    int x;
     private Map<Integer, Module> modules = new HashMap<Integer, Module>();
 
     @EventListener(ApplicationReadyEvent.class)
