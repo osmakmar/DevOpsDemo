@@ -16,18 +16,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @CrossOrigin
 @RestController
 public class ModuleController {
-    private Map<Integer, Module> modules = new HashMap<Integer, Module>();
+    private Map<Integer, Module> modules = new HashMap<>();
+    private static final Logger logger = LoggerFactory.getLogger(ModuleController.class);
 
     @EventListener(ApplicationReadyEvent.class)
     public void init() {
         this.modules.put(1,new Module(1, "Module Test1", "Modul 1"));
         this.modules.put(2,new Module(2, "Module Test2", "Modul 2"));
         this.modules.put(3,new Module(3, "Module Test3", "Modul 3"));
-        System.out.println("Init Data");
+        logger.info("Init Data");
     }
 
     @GetMapping("/testmodule")
