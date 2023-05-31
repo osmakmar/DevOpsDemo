@@ -32,4 +32,9 @@ public class CalculatorTest {
         int result = calculator.divide(10, 5);
         assertEquals(2, result);
     }
+
+    @Test
+    public void testSomething() {
+        
+    }
 }
