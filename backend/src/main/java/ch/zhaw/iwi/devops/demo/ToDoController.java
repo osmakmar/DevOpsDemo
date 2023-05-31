@@ -16,12 +16,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @CrossOrigin
 @RestController
 public class ToDoController {
 
-    private Map<Integer, ToDo> todos = new HashMap<Integer, ToDo>();
+    private Map<Integer, ToDo> todos = new HashMap<>();
+    private static final Logger logger = LoggerFactory.getLogger(ToDoController.class);
+
 
     @EventListener(ApplicationReadyEvent.class)
     public void init() {
@@ -30,7 +34,7 @@ public class ToDoController {
         this.todos.put(3,new ToDo(3, "Unit Tests", "Neues Projekt mit Unit Tests starten"));
         this.todos.put(4,new ToDo(4, "Deployment", "Jede Woche!"));
         this.todos.put(5,new ToDo(5, "Organigramm", "Löschen"));
-        System.out.println("Init Data");
+        logger.info("Init Data");
     }
 
     @GetMapping("/test")
