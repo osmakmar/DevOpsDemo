@@ -9,7 +9,7 @@ public class FizzBuzzConverterTest {
     public void fizzBuzzConverter1() {
 
         FizzBuzzConverter fizzBuzz = new FizzBuzzConverter();
-        Assertions.assertEquals("5", fizzBuzz.convert(1));
+        Assertions.assertEquals("1", fizzBuzz.convert(1));
 
     }
 
