@@ -150,15 +150,6 @@ export class GuiModel {
                             "width": 2,
                             "newRow": false,
                         },
-                        {
-                            "type": "button",
-                            "name": { default: "Ebenfalls Button für ToDo-List" },
-                            "icon": "fa-file-alt",
-                            "color": "wet-asphalt",
-                            "page": "toDoPage",
-                            "width": 2,
-                            "newRow": false,
-                        },
                     ]
                 },
                 {
